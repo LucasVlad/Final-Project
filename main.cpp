@@ -1,4 +1,3 @@
-#include <cctype>
 #include <iostream>
 #include <random>
 #include <vector>
@@ -12,7 +11,11 @@ public:
   int lives = 6;
   vector<string> words;
 
-  HangTheMan() { words = {"test", "test1"}; }
+  HangTheMan() {
+    words = {"favor",   "dough",   "opera",   "chart",   "haunt",
+             "unlike",  "bucket",  "remedy",  "manual",  "nuance",
+             "squeeze", "posture", "plaster", "cluster", "factory"};
+  }
 
   HangTheMan(vector<string> words) {
     for (int i = 0; i < words.size(); i++) {
@@ -130,7 +133,7 @@ int main() {
   while (poi == 0) {
     // selection menu
     cout << "Select an option:" << endl;
-    cout << "1. use pregenerated words." << endl;
+    cout << "1. use pre-generated words." << endl;
     cout << "2. input your own words." << endl;
     cout << "3. quit" << endl << endl;
     cin >> poi;
