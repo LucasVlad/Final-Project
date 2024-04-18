@@ -73,15 +73,15 @@ public:
 
 // function for selecting the word to be used for the round
 void selectWord(HangTheMan *hangman, string *word, string *activeWord) {
-  // pick random index in the word list to select a word
-  // to be used for the round
-  mt19937 seed(rd());
-  uniform_int_distribution<> distr(0, hangman->words.size() - 1);
-  int pos = distr(seed);
-
   // only assign a word from the word list in the hangman
   // class if there are words left
   if (hangman->words.size() != 0) {
+    // pick random index in the word list to select a word
+    // to be used for the round
+    mt19937 seed(rd());
+    uniform_int_distribution<> distr(0, hangman->words.size() - 1);
+    int pos = distr(seed);
+
     // set word var to selected word from list
     *word = hangman->words.at(pos);
 
